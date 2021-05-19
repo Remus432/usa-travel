@@ -1,0 +1,36 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+
+body
+  background: $bg
+  position: relative
+  background-image: url("./img/bg.png")
+  background-size: 105%
+  background-position: top center
+  background-repeat: no-repeat
+  display: flex
+  justify-content: center
+  align-items: center
+
+  padding: 4rem
+
+  &::before
+    content: ""
+    position: absolute
+    
+    top: 0%
+    left: 0%
+    background-image: url("./img/Background.png")
+    background-size: cover
+
+@font-face
+  font-family: Lovelo
+  src: url("lovelo.otf")
+
+h1, h2
+  font-family: "Lovelo"
