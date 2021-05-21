@@ -1,8 +1,10 @@
 import React from "react"
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
-const Card = ({ state, bg, flag, map, area, motto, capital, population }) => {
+const Card = ({ path, state, bg, flag, map, area, motto, capital, population }) => {
   return (
-    <div className="main__states-card">
+    <motion.div whileHover={{ y: -50, boxShadow: "0 5px 10px rgba(0, 0, 0, 0.3)"  }} className="main__states-card">
       <img className="main__states-card-flag" src={flag} alt="Flag" />
       <div className="main__states-card-thumbnail">
         <img className="main__states-card-thumbnail-bg" src={bg}  alt="State Background Thumbnail" />
@@ -16,9 +18,12 @@ const Card = ({ state, bg, flag, map, area, motto, capital, population }) => {
           <li className="main__states-card-info-list-item">Capital: {capital}</li>
           <li className="main__states-card-info-list-item">Population: {population}</li>
         </ul>
-        <button className="main__states-card-btn">Explore</button>
+        <Link to={path}>
+          <button className="main__states-card-btn">Explore</button>
+        </Link>
+        
       </div>
-    </div>
+    </motion.div>
   )
 }
 

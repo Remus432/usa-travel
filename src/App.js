@@ -1,4 +1,6 @@
 import React from "react"
+import { motion } from "framer-motion"
+// Images
 import Eagle from "./img/eagle.png"
 import Star from "./img/star.svg"
 import Map from "./img/USA.png"
@@ -25,21 +27,21 @@ function App() {
   return (
     <div className="main">
       <div className="main__headline">
-        <h1 className="main__headline-text">TRAVEL TO AMERICA</h1>
-        <img className="main__headline-img" src={Eagle} alt="Flying Eagle" />
+        <motion.h1 animate={{ x: [-100, 0] }} transition={{ duration: .8 }} className="main__headline-text">TRAVEL TO AMERICA</motion.h1>
+        <motion.img animate={{ y: [-100, 0] }} className="main__headline-img" src={Eagle} alt="Flying Eagle" />
       </div>
       <div className="main__stars">
-        <img className="main__stars-img" src={Star} alt="Star" />
-        <img className="main__stars-img" src={Star} alt="Star" />
-        <img className="main__stars-img" src={Star} alt="Star" />
-        <img className="main__stars-img" src={Star} alt="Star" />
+        <motion.img animate={{ rotate: 360 }} transition={{ duration: .5 }} className="main__stars-img" src={Star} alt="Star" />
+        <motion.img animate={{ rotate: -360 }} transition={{ duration: .5 }} className="main__stars-img" src={Star} alt="Star" />
+        <motion.img animate={{ rotate: 360 }} transition={{ duration: .5 }} className="main__stars-img" src={Star} alt="Star" />
+        <motion.img animate={{ rotate: -360 }} transition={{ duration: .5 }} className="main__stars-img" src={Star} alt="Star" />
       </div>
-      <img className="main__map" src={Map} alt="USA Map" />
+      <motion.img animate={{ scale: [.5, 1] }} className="main__map" src={Map} alt="USA Map" />
       <div className="main__states">
-        <Card flag={tnFlag} map={tnMap} bg={tnBg} state="Tennesse" motto="Agriculture and Commerce" area="109,247" capital="Nashville" population="6,829,174" />
-        <Card flag={txFlag} map={txMap} bg={txBg} state="Texas" motto="Friendship" area="695,662" capital="Austin" population="28,995,881" /> 
-        <Card flag={msFlag} map={msMap} bg={msBg} state="Mississippi" motto="Virtute et Armis" area="125,460" capital="Jackson" population="2,976,149" /> 
-        <Card flag={luFlag} map={luMap} bg={luBg} state="Louisiana" motto="Union, Justice and Confidence" area="135,651" capital="Baton Rouge" population="4,648,794" /> 
+        <Card path="/tennessee" flag={tnFlag} map={tnMap} bg={tnBg} state="Tennesse" motto="Agriculture and Commerce" area="109,247" capital="Nashville" population="6,829,174" />
+        <Card path="/texas" flag={txFlag} map={txMap} bg={txBg} state="Texas" motto="Friendship" area="695,662" capital="Austin" population="28,995,881" /> 
+        <Card path="/mississippi" flag={msFlag} map={msMap} bg={msBg} state="Mississippi" motto="Virtute et Armis" area="125,460" capital="Jackson" population="2,976,149" /> 
+        <Card path="/louisiana" flag={luFlag} map={luMap} bg={luBg} state="Louisiana" motto="Union, Justice and Confidence" area="135,651" capital="Baton Rouge" population="4,648,794" /> 
       </div>
     </div>
   );
