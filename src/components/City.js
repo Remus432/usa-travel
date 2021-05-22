@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import AnimatedHeadline from "./AnimatedHeadline"
 
 const City = ({ name, area, founded, population, image, history, geography, culture }) => {
   const [historyState, setHistory] = useState(true)
@@ -36,7 +38,7 @@ const City = ({ name, area, founded, population, image, history, geography, cult
       <div className="state__cities-city-overview">
         <h1 className="state__cities-city-name">{name}</h1>
         <div className="state__cities-city-info">
-          <h2 className="state__cities-city-info-subheadline">{historyState && "History" || cultureState && "Culture" || geographyState && "Geography"}</h2>
+          <AnimatedHeadline currState={historyState && { val: historyState, text: "History" } || cultureState && { val: cultureState, text: "Culture" } || geographyState && { val: geographyState, text: "Geography" }}/>
           <p className="state__cities-city-info-p">{historyState && history || cultureState && culture || geographyState && geography}</p>
         </div>
         <div className="state__cities-city-controls">
