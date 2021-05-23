@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 import AnimatedHeadline from "./AnimatedHeadline"
 
 const City = ({ name, area, founded, population, image, history, geography, culture }) => {
